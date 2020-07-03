@@ -40,8 +40,9 @@ def parser(contestNumber):
         problemLevel = chr(ord('A')+i)
         try: 
             inputs,outputs = testCaseExtracter(contestNumber,problemLevel)
+            # print(inputs,outputs)
             numOfInputs = len(inputs)
-            problemFolder = os.path.join(current_dir,contestNumber,problemLevel)
+            problemFolder = os.path.join(current_dir,'temp',contestNumber,problemLevel)
             os.mkdir(problemFolder)
             for inp in range(numOfInputs):
                 with open(f'{problemFolder}/input{inp}.txt','w') as f:
@@ -52,4 +53,4 @@ def parser(contestNumber):
 
 if __name__ == '__main__':
     contestNumber = input('Enter contest number: ')
-    main(contestNumber)
+    parser(contestNumber)
