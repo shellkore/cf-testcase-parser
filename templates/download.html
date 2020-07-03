@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <button> Click to download {{contest}}</button>
+	<h3>Your testcase zip file is ready</h3>
+	<a href="static/zipfiles/{{contest}}.zip" download>
+		<button> Click To Download!!</button>
+		</a>
+	<div>
+	<a href="/"><button>Once more?</button></a>
+	</div>
 {% endblock %}

@@ -2,8 +2,14 @@
 <html>
 <head>
 	<title>TestCase-briefcase</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/base.css')}}">
 </head>
 <body>
-{% block content %}{% endblock %}
+	<div class="container">
+		<div>
+			<h2>Get your Codeforces sample test cases download instantly!!</h2>
+		</div>
+		{% block content %}{% endblock %}
+	</div>
 </body>
 </html>

@@ -31,10 +31,13 @@ def getQuestionCount(contestNum):
     return(numberOfQuestion)
 
 def parser(contestNumber):
-    quesCount = getQuestionCount(contestNumber)
-    print(f"Total number of questions are {quesCount}")
     current_dir = (os.getcwd())
     folderName = os.path.join(current_dir,'temp',contestNumber)
+    if os.path.exists(folderName):
+        print('Requested item already exists!!')
+        return
+    quesCount = getQuestionCount(contestNumber)
+    print(f"Total number of questions are {quesCount}")
     os.mkdir(folderName)
     for i in range(quesCount):
         problemLevel = chr(ord('A')+i)
