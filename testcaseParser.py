@@ -30,11 +30,11 @@ def getQuestionCount(contestNum):
     numberOfQuestion = len(dataTable.find_all("td",class_='id'))
     return(numberOfQuestion)
 
-def main(contestNumber):
+def parser(contestNumber):
     quesCount = getQuestionCount(contestNumber)
     print(f"Total number of questions are {quesCount}")
     current_dir = (os.getcwd())
-    folderName = os.path.join(current_dir,contestNumber)
+    folderName = os.path.join(current_dir,'temp',contestNumber)
     os.mkdir(folderName)
     for i in range(quesCount):
         problemLevel = chr(ord('A')+i)
